@@ -9,6 +9,7 @@ const skills = [
     getAll, 
     getOne, 
     create, 
+    deleteOne,
   };
   
   function getAll() {
@@ -29,4 +30,12 @@ const skills = [
     // New skill wouldn't be done :)
     skill.expertise = 0;
     skills.push(skill);
+  }
+  	
+  function deleteOne(id) {
+    // All properties attached to req.params are strings!
+    id = parseInt(id);
+    // Find the index based on the id of the todo object
+    const idx = skills.findIndex(skill => skill.id === id);
+    skills.splice(idx, 1);
   }

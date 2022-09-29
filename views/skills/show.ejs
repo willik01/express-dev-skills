@@ -14,5 +14,11 @@
     Skill Name:  <%= skill.skill %>
     <br>
     Skill Expertise: <%= skill.expertise %>
+    <br>
+    <br>
+    <form action="/skills/<%= skill.id %>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button type="submit">DELETE Skill: <%=skill.skill%></button>
+    </form>
 </body>
 </html>

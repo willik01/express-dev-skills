@@ -12,6 +12,8 @@ router.get('/new', skillsCtrl.new);
 // GET /skills/:id
 router.get('/:id', skillsCtrl.show);
 router.post('/', skillsCtrl.create);
+router.delete('/:id', skillsCtrl.delete);  //may have to be /:id/skills
+
 
 module.exports = router;
  

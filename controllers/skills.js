@@ -3,7 +3,8 @@
     index, 
     show,
     new: newSkill,
-    create
+    create, 
+    delete: deleteSkill, 
   };
  
   // Should name the model in uppercase and singular
@@ -35,3 +36,7 @@
     res.redirect('/skills');
   }
 
+  function deleteSkill(req, res) {
+    Skill.deleteOne(req.params.id);
+    res.redirect('/skills');
+  }
