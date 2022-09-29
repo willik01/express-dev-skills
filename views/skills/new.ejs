@@ -1,8 +1,14 @@
 <%- include('../partials/header') %>
 <body>
     <h1>New Skill</h1>
+    <div>Name : Expertise</div>
+    <br>
     <form action="/skills" method="POST" autocomplete="off">
+      <label for="text">Skill name</label>
       <input type="text" name="skill">
+      <br><br>
+      <label for="number">Expertise (1-10)</label>
+      <input type="number" name="expertise" min="1" max="10">
       <button type="submit">Add new skill</button>
     </form>
 </body>

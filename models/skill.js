@@ -26,10 +26,9 @@ const skills = [
   }
 
   function create(skill) {
+    console.log("skill as passed: ",skill)
     // Add the id
     skill.id = Date.now() % 1000000;
-    // New skill wouldn't be done :)
-    skill.expertise = 0;
     skills.push(skill);
   }
   	
@@ -43,5 +42,6 @@ const skills = [
 
   function updateOne(id, skill) {
     skillToUpdate = getOne(id);
-    skillToUpdate.skill = skill;
+    skillToUpdate.skill = skill.skill;
+    skillToUpdate.expertise = skill.expertise;
   }

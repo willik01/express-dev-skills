@@ -1,3 +1,5 @@
+// Should name the model in uppercase and singular
+const Skill = require('../models/skill');
  
  module.exports = {
     index, 
@@ -8,9 +10,6 @@
     edit, 
     update
   };
- 
-  // Should name the model in uppercase and singular
- const Skill = require('../models/skill');
  
   function index(req, res) {
     res.render('skills/index', {
@@ -51,6 +50,6 @@
   }
 
   function update(req, res) {
-    Skill.updateOne(req.params.id, req.body.skill)
+    Skill.updateOne(req.params.id, req.body)
     res.redirect(`/skills/${req.params.id}`);
   }

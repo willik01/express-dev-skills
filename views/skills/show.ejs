@@ -12,10 +12,12 @@
         class="delete-form" method="POST">
         <button type="submit">DELETE Skill: <%=skill.skill%></button>
     </form>
-    
-    <a href="/skills/<%= skill.id %>/edit">Edit Skill: <%=skill.skill%></a>
-    <!-- <form action="/skills/<%= skill.id %>/edit">
+    <br><br>
+    <!-- <a href="/skills/<%= skill.id %>/edit">Edit Skill: <%=skill.skill%></a> -->
+    <form action="/skills/<%= skill.id %>/edit">
         <input type="submit" value="Edit Skill: <%=skill.skill%>" />
-    </form> -->
+    </form> 
+    <br><br>
+    <a href="/skills">Back to Skills List</a>
 </body>
 </html>

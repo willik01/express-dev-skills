@@ -2,7 +2,10 @@
 <body>
     <h1>Edit Skill</h1>
     <form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="off">
+      <label for="text">Skill name</label>
       <input type="text" name="skill" value="<%= skill.skill %>">
+      <label for="number">Expertise (1-10)</label>
+      <input type="number" name="expertise" min="1" max="10" value="<%= skill.expertise %>">
       <button type="submit">Update Skill</button>
     </form>
 </body>
