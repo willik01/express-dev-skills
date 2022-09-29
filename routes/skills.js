@@ -8,8 +8,10 @@ var skillsCtrl = require('../controllers/skills');
 
 // GET /skills
 router.get('/', skillsCtrl.index);
+router.get('/new', skillsCtrl.new);
+// GET /skills/:id
+router.get('/:id', skillsCtrl.show);
+router.post('/', skillsCtrl.create);
 
-
-//Not sure where this came from...
 module.exports = router;
  

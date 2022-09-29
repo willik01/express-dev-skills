@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express - skills</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title> <%= title %> </title>
 </head>
 <body>
-    <h1>Skills</h1>
+    <h1>Skills as of <%= time %> <%= Date %></h1>
     <ul>
       <% skills.forEach(function(s) { %>
         <li>
+          <a href="/skills/<%= s.id %>"><%= s.skill %></a>
           <%= s.id %>
             - 
           <%= s.skill %>
             -
           <%= s.expertise %>
-          <!-- <%= s.done ? 'done' : 'not done' %> -->
         </li>
       <% }); %>
     </ul>
+    <a href="/skills/new">Add new Skill</a>
 </body>
 </html>

@@ -6,12 +6,23 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var skillsRouter = require('./routes/skills');
+const { time } = require('console');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+	
+// add middleware below the above line of code
+app.use(function(req, res, next) {
+    // Add a time property to the res.locals object
+  // The time property will then be accessible when rendering a view
+  res.locals.time = new Date().toLocaleTimeString();
+  res.locals.Date = new Date().toLocaleDateString();
+  next();  // Pass the request to the next middleware
+});
 
 app.use(logger('dev'));
 app.use(express.json());
