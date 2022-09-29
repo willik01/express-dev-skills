@@ -12,7 +12,9 @@ router.get('/new', skillsCtrl.new);
 // GET /skills/:id
 router.get('/:id', skillsCtrl.show);
 router.post('/', skillsCtrl.create);
-router.delete('/:id', skillsCtrl.delete);  //may have to be /:id/skills
+router.delete('/:id', skillsCtrl.delete);  
+router.get('/:id/edit', skillsCtrl.edit);
+router.put('/:id', skillsCtrl.update);
 
 
 module.exports = router;

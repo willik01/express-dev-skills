@@ -10,6 +10,7 @@ const skills = [
     getOne, 
     create, 
     deleteOne,
+    updateOne
   };
   
   function getAll() {
@@ -38,4 +39,9 @@ const skills = [
     // Find the index based on the id of the todo object
     const idx = skills.findIndex(skill => skill.id === id);
     skills.splice(idx, 1);
+  }
+
+  function updateOne(id, skill) {
+    skillToUpdate = getOne(id);
+    skillToUpdate.skill = skill;
   }
